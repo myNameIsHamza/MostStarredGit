@@ -1,0 +1,29 @@
+<!--The content below is only a placeholder and can be replaced.--> 
+<div *ngIf="profiles">
+
+  <h1  class="display-1" style="margin-left: 200px" >The most starred repositories on Github</h1>
+  
+  <div class="container-fluid">
+    <div class="container-fluid" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()" [scrollWindow]="false"
+    style="height: 80vh;  overflow-y: scroll;">
+    <div style="margin-bottom: 20px;" class="row" *ngFor="let profile of profiles">
+      <div class="col-md-6 img">
+        <img src="{{profile.owner.avatar_url}}" width="200" height="200" alt="" class="img-rounded">
+      </div>
+      <div class="col-md-6 details">
+        <blockquote>
+          <h3 style="color: blue;"> {{ profile.name }} </h3>
+          {{profile.description}} <i class="icon-map-marker"></i>
+        </blockquote>
+        <cite title="Stars count"> <p class="octicon octicon-star" style="margin-right: 80px;">
+        {{profile.stargazers_count}} </p></cite>
+        <cite title="Issues count"> <p class="octicon octicon-alert" style="margin-right: 80px;">
+        {{profile.open_issues_count}} </p></cite>
+        <small> <cite title="Time">{{profile.created_at}} by {{profile.owner.login}} </cite></small>
+      </div>
+      <br>
+    </div>
+  </div>
+</div>
+
+</div>
