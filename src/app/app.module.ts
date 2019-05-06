@@ -4,17 +4,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProfilesService } from './services/profiles.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ProfilesComponent } from './profiles/profiles.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
-    AppComponent
+  AppComponent,
+  ProfilesComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
+  BrowserModule,
+  AppRoutingModule,
+  HttpClientModule,
+  InfiniteScrollModule
   ],
   providers: [ProfilesService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,ProfilesComponent]
 })
 export class AppModule { }

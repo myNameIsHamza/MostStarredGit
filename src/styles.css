@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 .container{
-    padding:5%;
+    padding:50%;
 }
 .container .img{
     text-align:center;
@@ -11,4 +11,16 @@
 .container .details p{
     font-size:15px;
     font-weight:bold;
+}
+.container {
+  margin-top: 20px;
+}
+.page {
+  display: none;
+}
+.page-active {
+  display: block;
+}
+h1 {
+	font-family: Roboto;
 }
